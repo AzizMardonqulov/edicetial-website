@@ -18,7 +18,7 @@ input{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background:linear-gradient(to right , #FFFAF6 , #E5FEFC)
+    background:linear-gradient(to right , #FFFAF6 , #b2dfdb)
 }
 .navbar{
     width: 100%;
