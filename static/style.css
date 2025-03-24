@@ -16,10 +16,9 @@ input{
 }
 .hader{
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    background:linear-gradient(to right , #FFFAF6 , #b2dfdb)
+    background:linear-gradient(to right , #FFFAF6 10%, #b2dfdb  90%)
 }
 .navbar{
     width: 100%;
@@ -241,4 +240,10 @@ input{
     .medio-navbar{
         display: none;
     }
+}
+/* baner */
+.baner{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
