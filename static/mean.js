@@ -5,5 +5,5 @@ bars.addEventListener("click" , function(){
     medioNavbar.style.top="0";
 })
 close.addEventListener("click" , function(){
-    medioNavbar.style.top="-100%";
+    medioNavbar.style.top="-150vh";
 })
