@@ -19,7 +19,7 @@ input{
     height: fit-content;
     display: flex;
     flex-direction: column;
-    background:linear-gradient(to right , #FFFAF6 10%, #add3d0  90%)
+    background:linear-gradient(to bottom right , #FFFAF6 10%, #add3d0  90%)
 }
 .navbar{
     width: 100%;
