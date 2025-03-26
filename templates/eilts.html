@@ -10,9 +10,9 @@
     <div class="test">
         <div class="test-lable">
             <div class="test-lable-1">This is Eilst test</div>
-            <div class="test-lable-block">About Test</div>
-            <div class="hidden-lable">
-                <div class="close-hidden-lable">X</div>
+            <div id="aboutTestBTN" class="test-lable-block">About Test</div>
+            <div id="hiddenLable" class="hidden-lable">
+                <div id="CloseHidden" class="close-hidden-lable">X</div>
                 <div class="lable">
                     <div class="hidden-lable-1">You can determine your English proficiency level with this test</div>
                     <div class="hidden-lable-2">The creator of this test and the website is <a href="https://aziz-mardonqulov-web.netlify.app">Aziz Mardonqulov</a></div>
@@ -42,6 +42,16 @@
     <div class="bottom-button">
         <div class="open-test">Get Starts</div>
     </div>
-    <script ></script>
+    <script>
+        let hiddenLable = document.getElementById("hiddenLable");
+        let aboutTestBTN = document.getElementById("aboutTestBTN");
+        let CloseHidden = document.getElementById("CloseHidden")
+        aboutTestBTN.addEventListener("click" , function(){
+            hiddenLable.style.top="0";
+        })
+        CloseHidden.addEventListener("click" , function(){
+            hiddenLable.style.top = "-150vh";
+        })
+    </script>
 </body>
 </html>

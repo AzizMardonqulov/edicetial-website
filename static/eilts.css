@@ -126,7 +126,7 @@ input{
     z-index: 200;
     background-color: #000000ad;
     left: 0;
-    top: 0;
+    top: -150vh;
     display: block;
     display: flex;
     align-items: center;
@@ -189,6 +189,10 @@ input{
     font-size: 22px;
     font-weight: 500;
     line-height: 1.8em;
+}
+.close-hidden-lable:hover{
+    color: red;
+    cursor: pointer;
 }
 @media only screen and (max-width:768px) {
     .test{

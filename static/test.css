@@ -109,6 +109,10 @@ input{
     line-height: 1.8em;
   
 }
+.close-hidden-lable:hover{
+    color: red;
+    cursor: pointer;
+}
 .test-img{
     width: 40%;
     height: 100%;
