@@ -37,6 +37,7 @@ input{
 }
 .test-lable-block{
     color: #FFF;
+    cursor: pointer;
 }
 .test-lable *{
     text-align: center;
@@ -114,8 +115,7 @@ input{
     font-family: Epilogue, sans-serif;
     font-size: 18px;
     font-weight: 500;
-    line-height: 1.8em;
-  
+    line-height: 1.8em;  
 }
 
 
@@ -194,6 +194,21 @@ input{
     color: red;
     cursor: pointer;
 }
+.bottom-button{
+    width: 100%;
+    height: 30vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.open-test{
+    font-size: 20px;
+    cursor: pointer;
+}
+.open-test:active{
+    transform: scale(1.3);
+}
 @media only screen and (max-width:768px) {
     .test{
         padding-left: 1rem;
@@ -234,5 +249,26 @@ input{
 @media only screen and (max-width:362px) {
     .test-in-lable-1{
         font-size: 35px;
+    }
+}
+@media only screen and (max-width:700px) {
+    .lable{
+        width: 130%;
+        transform: scale(0.7);
+    }
+}
+@media only screen and (max-width:524px) {
+    .lable{
+        width: 150%;
+        transform: scale(0.6);
+    }
+}
+@media only screen and (max-width:455px) {
+    .lable{
+        width: 195%;
+        transform: scale(0.5);
+    }
+    .close-hidden-lable{
+        font-size: 16px;
     }
 }
