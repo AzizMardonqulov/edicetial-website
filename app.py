@@ -2,7 +2,10 @@ from flask import Flask , render_template , redirect
 import sqlite3
 app = Flask(__name__)
 
-
+def get_db_connection():
+    conn = sqlite3.connect("test.db")
+    conn.row_factory = sqlite3.Row  # Ma'lumotlarni lug‘at (dictionary) shaklida olish
+    return conn
 conn = sqlite3.connect("test.db")
 
 cursor = conn.cursor()
@@ -39,7 +42,6 @@ sample_data = [
 ]
 # cursor.executemany("INSERT INTO test (quasion, obsion, addvers) VALUES (?, ?, ?)", sample_data)
 
-conn.commit()
 @app.route('/')
 def index():
   return  render_template("index.html")
@@ -51,11 +53,21 @@ def test():
 
 @app.route("/test/eilts")
 def eilts():
-   cursor.execute("SELECT * FROM test")
-   quasion =  cursor.fetchall()
-   conn.commit()
-   conn.close()
-   return render_template("eilts.html" , quasion = quasion)
+    conn = get_db_connection() 
+    cursor = conn.cursor()
+    # cursor.execute("SELECT * FROM test")
+    # quasion = cursor.fetchall()
+    # conn.close()  
+    # Ma'lumotlarni faqat bir marta qo‘shish uchun tekshiramiz
+    cursor.execute("SELECT * FROM test")
+    quasion = cursor.fetchall()
+
+    if quasion == 0:  # Agar bo‘sh bo‘lsa, qo‘shamiz
+        cursor.executemany("INSERT INTO test (quasion, obsion, addvers) VALUES (?, ?, ?)", sample_data)
+        conn.commit()
+
+    conn.close()  # Ulanishni yopamiz
+    return render_template("eilts.html", quasion=quasion)
 
 if __name__ == '__main__':
     app.run(debug=True)

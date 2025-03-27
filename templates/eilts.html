@@ -42,19 +42,72 @@
     <div class="bottom-button">
         <div class="open-test">Get Starts</div>
     </div>
-    <div style="color: #222;" class="quasion">
-        {{ quasion }}
+    <div class="test-part">
+        <div class="close-test">X</div>
+        <div class="test-part-img">
+            <img width="200px" src="../static/img/navbar/craiyon_144931_transparent.png" alt="notfound">
+        </div>
+        <div class="quasion-block">
+            {% for question in quasion %}
+            <li id="test">
+                <div class="quasion">{{ question['id'] }}.  {{ question['quasion'] }}</div>
+               <div  class="obsion">
+                    <div id="obsion" class="obsion-1">{{ question['obsion'].split(', ')[0] }}</div>
+                    <div id="obsion" class="obsion-1">{{ question['obsion'].split(', ')[1] }}</div>
+                    <div id="obsion" class="obsion-1">{{ question['obsion'].split(', ')[2] }}</div>
+                    <div id="obsion" class="obsion-1">{{ question['obsion'].split(', ')[3] }}</div>
+            </div>
+               <div id="adwers" class="adwers">{{ question['addvers'] }}</div>
+            </li>
+        {% endfor %}
+        <div class="min"><div class="min-width"></div></div>
+        <div class="quasion-buttons">
+            <div id="restart" class="quasion-button-1">Restart</div>
+            <div id="enter" class="quasion-button-2">Enter</div>
+        </div>
+        </div>
     </div>
     <script>
         let hiddenLable = document.getElementById("hiddenLable");
         let aboutTestBTN = document.getElementById("aboutTestBTN");
         let CloseHidden = document.getElementById("CloseHidden")
+        let test = document.querySelectorAll("#test");
+        let obsion =document.querySelectorAll("#obsion");
+        let truuAdd = document.getElementById("")
+        let restart = document.getElementById("restart");
+        let enter = document.getElementById("enter");
+        let adwers = document.getElementById("adwers")
         aboutTestBTN.addEventListener("click" , function(){
             hiddenLable.style.top="0";
         })
         CloseHidden.addEventListener("click" , function(){
             hiddenLable.style.top = "-150vh";
         })
+        function quasion(){
+            let num =0;
+            enter.addEventListener("click" , function(){
+                    num += 1;
+                    alert(num)
+                    for (let i=0; i < num;i++){
+                        test[i].classList.remove("active");
+                        test[num].classList.add("active");
+                        console.log(test[num]);
+            }
+                })
+            for (let i=0; i < 1;i++){
+                test[num].classList.add("active");
+                console.log(test[num]);
+            }
+            for (let i=0 ; i<obsion.length; i++){
+                obsion[i].addEventListener("click" , function(){
+                    obsion.forEach(btn => btn.classList.remove("clickButton"));
+                    this.classList.add("clickButton");
+                    
+                })
+                console.log(obsion[i])
+            }
+        }
+        quasion()
     </script>
 </body>
 </html>
