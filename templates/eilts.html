@@ -63,7 +63,7 @@
         <div class="min"><div class="min-width"></div></div>
         <div class="quasion-buttons">
             <div id="restart" class="quasion-button-1">Restart</div>
-            <div id="enter" class="quasion-button-2">Enter</div>
+            <div id="enter" class="quasion-button-2">Enter <div id="result" class=""></div></div>
         </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
         let truuAdd = document.getElementById("")
         let restart = document.getElementById("restart");
         let enter = document.getElementById("enter");
-        let adwers = document.getElementById("adwers")
+        let result =document.getElementById("result");
         aboutTestBTN.addEventListener("click" , function(){
             hiddenLable.style.top="0";
         })
@@ -87,25 +87,33 @@
             let num =0;
             enter.addEventListener("click" , function(){
                     num += 1;
-                    alert(num)
                     for (let i=0; i < num;i++){
                         test[i].classList.remove("active");
                         test[num].classList.add("active");
-                        console.log(test[num]);
-            }
-                })
+                        let selectedOption = document.querySelector(".clickButton");
+                        let adwers =document.querySelectorAll("#adwers")
+                        for(let i=0; i < adwers.length;i++){
+                            console.log(adwers[i])
+                            let num2 =0;
+                            if (selectedOption && adwers[num]) {
+                                 if (selectedOption.textContent.trim() == adwers[i].textContent.trim()) {
+                                    num2 ++;
+                                    result.innerHTML=num2;
+                                    alert("hello")
+                                }
+                            }
+                        }
+        }})
             for (let i=0; i < 1;i++){
                 test[num].classList.add("active");
-                console.log(test[num]);
-            }
-            for (let i=0 ; i<obsion.length; i++){
+
+                for (let i=0 ; i<obsion.length; i++){
                 obsion[i].addEventListener("click" , function(){
                     obsion.forEach(btn => btn.classList.remove("clickButton"));
                     this.classList.add("clickButton");
                     
                 })
-                console.log(obsion[i])
-            }
+            }}
         }
         quasion()
     </script>
