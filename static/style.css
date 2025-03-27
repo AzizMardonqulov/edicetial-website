@@ -19,7 +19,7 @@ input{
     height: fit-content;
     display: flex;
     flex-direction: column;
-    background:linear-gradient(to bottom right , #FFFAF6 10%, #add3d0  90%)
+    background:linear-gradient(to bottom right , #FFFAF6 10%, #DFFFFE  90%)
 }
 .navbar{
     width: 100%;
@@ -417,7 +417,7 @@ input{
     border-color: #8B5DCE;
     top: -30%;
     left: 40%;
-    animation: square 4s  ease-in-out infinite;
+    animation: square 2s  ease-in-out infinite;
     transform: scale(1);
 }
 .baner-img-1:nth-child(3) .square{
@@ -425,7 +425,7 @@ input{
     height: 50px;
     border-color: #DE4344;
     bottom: 10%;
-    animation: square 5s  ease-in-out infinite;
+    animation: square 3s  ease-in-out infinite;
     transform: scale(1);
 }
 .baner-img-1:nth-child(4) .square{
@@ -434,7 +434,7 @@ input{
     border-color: #387975;
     top: -20%;
     left: 20%;
-    animation: square 6s  ease-in-out infinite;
+    animation: square 4s  ease-in-out infinite;
     transform: scale(1);
 }
 .baner-input{
@@ -483,6 +483,20 @@ input{
     color:#222;
     font-size: 22px;
 }
+.bac-bottom{
+    width: 100%;
+    height: 30vh;
+    background-image: url(./img/baner/bottom-img.png);
+    background-position: top;
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    z-index: -4;
+    transform: rotate(180deg);
+}
+.baner-lable{
+    justify-content: center;
+}
 @media only screen and (max-width:1220px) {
     .baner{
         padding-left: 3rem;
@@ -520,6 +534,13 @@ input{
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    .baner-lable{
+        height: fit-content;
+        margin-top: 1rem;
+    }
+    .bac-bottom{
+        display: none;
+    }
 }
 @media only screen and (max-width:619px){
     .baner{
@@ -549,8 +570,211 @@ input{
 }
 
 
+/* tech */
+.tech{
+    margin-top: 11rem;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12rem;
+}
+.tech-lable-icon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.tech-lable{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 
-
+}
+.tech-lable-1{
+    color: #222;
+    text-transform: capitalize;
+    margin-top: 10px;
+    font-family: Epilogue, sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.2em;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.tech-lable-2{
+    color:#535756;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Epilogue, sans-serif;
+    font-size:  20px;
+    font-weight: 600;
+    line-height: 1.2em;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.tech-lable-2::before{
+    content: "";
+    width: 7%;
+    bottom: -2rem;
+    height: 4px;
+    background-color: #387975;
+    position: absolute;
+}
+.tech-block{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://cdn.prod.website-files.com/64184874f371bc785f2236eb/641ac090614c870103d68441_Background%202%201.png);
+    background-size: cover; 
+    display: flex;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    position: relative;
+    gap: 2rem;
+}
+.tech-block-1{
+    width: 300px;
+    height: fit-content;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: -10%;
+    background-color: #E1ECEB;
+    padding-top: 2rem;
+    border-radius: 10px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+.block-img{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+.block-img:hover .block-img-1{
+    border-color: #387975;
+}
+.block-img-1 {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    background-size: cover;
+    background-image: url(../static/img/tech/auther1.png);
+    border: 3px solid #E1ECEB;
+    border-radius: 50%;
+    box-shadow: 0PX 0PX 1px 0.3em #86838313;
+}
+.tech-block-1:nth-child(2) .block-img .block-img-1 {
+    background-image: url(../static/img/tech/auther2.png) !important;
+}
+.tech-block-1:nth-child(3) .block-img .block-img-1 {
+    background-image: url(../static/img/tech/auther3.png) !important;
+}
+.tech-block-1:nth-child(4) .block-img .block-img-1 {
+    background-image: url(../static/img/tech/auther4.png) !important;
+}
+.block-lable{
+    width: 100%;
+    text-align: center;
+}
+.block-lable-1{
+    color: #222;
+    letter-spacing: .2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Epilogue, sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.2em;
+}
+.block-lable-2{
+    color:#777;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Epilogue, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+.block-bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.block-bottom-lable-2{
+    color: #387975;
+}
+@media only screen and (max-width:1300px) {
+    .tech-block{
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        height: fit-content;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .tech-block-1{
+        width: 45%;   
+        margin-bottom: 7rem;
+    }
+}
+@media only screen and (max-width:875px) {
+    .tech-block{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .tech-block-1{
+        width: 45%;    
+        margin-bottom: 5rem;
+        
+    }
+}
+@media only screen and (max-width:704px) {
+    .tech{
+        padding-top: 1rem;
+        justify-content: start
+    }
+    .block-lable-2 br{
+        display: none;
+    }
+    .tech-block{
+        padding-left: 0.5rem;
+        padding-right: 0.5REM;
+    }
+    .tech-block-1{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .block-lable-1{
+        font-size: 18px;
+    }
+    .block-lable-2{
+        font-size: 15px;
+        list-style: 15px;
+    }
+}
+@media only screen and (max-width:653px) {
+    .tech-block{
+        flex-direction: column;
+    }
+    .tech-block-1{
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-bottom: 3rem;
+    }
+    .block-lable-2 br{
+        display: block;
+    }
+}
 
 
 
