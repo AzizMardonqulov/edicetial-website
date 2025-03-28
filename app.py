@@ -1,4 +1,5 @@
 from flask import Flask , render_template , redirect ,jsonify , request
+import os
 import sqlite3
 app = Flask(__name__)
 
@@ -76,5 +77,6 @@ def get_result():
         score = data.get("score", 0)
         return jsonify({"message": "Score received", "score": score})
     return render_template("result.html")
-if __name__ == '__main__':
-    app.run(debug=True , port="5000")
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000)) 
+    app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)
