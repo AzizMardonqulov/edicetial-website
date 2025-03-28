@@ -1,4 +1,4 @@
-from flask import Flask , render_template , redirect ,jsonify , request , os
+from flask import Flask , render_template , redirect ,jsonify , request
 import sqlite3
 app = Flask(__name__)
 
@@ -76,6 +76,5 @@ def get_result():
         score = data.get("score", 0)
         return jsonify({"message": "Score received", "score": score})
     return render_template("result.html")
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # PORT o'zgaruvchisidan olingan portda ishga tushadi
-    app.run(host="0.0.0.0", port=port)
+if __name__ == '__main__':
+    app.run(debug=True , port="5000")
