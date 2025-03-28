@@ -709,8 +709,7 @@ input{
     font-family: Epilogue, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    line-height: 1.5em;
-}
+    line-height: 1.5em;}
 .block-bottom{
     width: 100%;
     display: flex;
@@ -1011,18 +1010,16 @@ input{
     height: 100%;
     position: relative;
 }
-.trust-part-3-in-blog-img img{
-    width:500px;
+.trust-lable-1{
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
-.trust-part-3-in-blog-img::before{
-    content: "";
-    position: absolute;
-    width:400px;
-    height: 580px;
-    border: 8px solid #ffca42;
-    top: 3rem;
-    right: 15%;
-    z-index: -1;
+.trust-lable-2{
+    font-size: 1rem;
+    font-family: 500;
+    color: #777;
 }
 @media only screen and (max-width:1480px) {
     .trust-part-3-in-blog-img{

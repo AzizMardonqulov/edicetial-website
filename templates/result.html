@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="../static/result.css">
+</head>
+<body>
+    <div class="result">
+        <h1>Result</h1>
+        <h2>{{ request }}</h2>
+    </div>
+    <h1>Your Score:</h1>
+    <div id="score"></div>
+
+    <script>
+        fetch("/test/result/page", {
+            method: "GET"
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("score").textContent = `Score: ${data.score}`;
+        })
+        .catch(error => console.error("Error fetching score:", error));
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-from flask import Flask , render_template , redirect 
+from flask import Flask , render_template , redirect ,jsonify , request
 import sqlite3
 app = Flask(__name__)
 
@@ -69,5 +69,12 @@ def eilts():
     conn.close()  # Ulanishni yopamiz
     return render_template("eilts.html", quasion=quasion)
 
+@app.route("/test/result/page")
+def get_result():
+    if request.method == "POST":
+        data = request.get_json()
+        score = data.get("score", 0)
+        return jsonify({"message": "Score received", "score": score})
+    return render_template("result.html")
 if __name__ == '__main__':
     app.run(debug=True)
