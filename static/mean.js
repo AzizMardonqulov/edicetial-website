@@ -11,3 +11,9 @@ close.addEventListener("click" , function(){
 window.addEventListener("load" , function(){
     loader.classList.add("loder")
 })
+const languageSelect = document.getElementById("languageSelect");
+const selectedLanguage = document.getElementById("selectedLanguage");
+
+languageSelect.addEventListener("change", function() {
+    selectedLanguage.value = this.value;
+});

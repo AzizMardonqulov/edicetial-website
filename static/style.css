@@ -1495,8 +1495,13 @@ input{
     width: 100%;
     height: fit-content;
     padding: 5rem 5rem;
-    padding-bottom: 10rem;
+    padding-bottom: 14rem;
     background-color: #387975;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .service-lable-1{
     color: #fff;
@@ -1652,5 +1657,148 @@ input{
 @media only screen and (max-width:450px) {
     .service-lable-1{
         font-size: 25px;
+    }
+}
+select {
+    padding: 10px;
+    font-size: 16px;
+}
+p {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* futer */
+.futer{
+    width: 100%;
+    height: 100vh;
+}
+.service-bottom{
+    width:85%;
+    background-color: #fff;
+    position: absolute;
+    bottom: -9rem;
+    box-shadow: 0px 0px 1em #777;
+    padding: 4rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+.service-botton-lable{
+    width: 35%;
+}
+.service-bottom-lable-1{
+    font-size: 45px;
+    color: #000;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+.service-bottom-lable-2{
+    font-size: 20px;
+    color: #333;
+    line-height: 30px;
+}
+.service-bottom-input{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2rem;
+}
+.service-bottom-input form{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.service-bottom-input input{
+    width: 48%;
+    height: 60px;
+    color: #222;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    padding-left: 1rem;
+    border: 1px solid #777;
+}
+.input-3{
+    width: 48%;
+}
+.input-3 *{
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    color: #777;
+    border: 1px solid #777;
+    border-radius: 6px;
+    padding-right: 1rem;
+}
+.submitFOrm{
+    width: fit-content;
+    border: 0px;
+    text-align: center;
+    color: #fff;
+    background-color: #387975;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.submitFOrm::placeholder{
+    color: #fff;
+}
+@media only screen and (max-width:1117px) {
+    .service-bottom{
+        bottom: -15%;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    .service-botton-lable{
+        width: 100%;
+    }
+    .service-bottom-input{
+        width: 100%;
+    }
+    .service-bottom-lable-1{
+        text-align: center;
+    }
+    .service-bottom-lable-1 br{
+        display: none;
+    }
+    .service-bottom-lable-2{
+        text-align: center;
+    }
+}
+@media only screen and (max-width:800px) {
+    .service-bottom{
+        width: 95%;
+    }
+}
+@media only screen and (max-width:600px) {
+    .service-bottom{
+        bottom: -22%;
+    }
+    .service-bottom-input form{
+        flex-direction: column !important;
+    }
+    .service-bottom-input{
+        padding-right: 0;
+    }
+    .service-bottom-input form input{
+        width: 100%;
+    }
+    .input-3{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:500px) {
+    .service-bottom{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+    .service-bottom-lable-1{
+        font-size: 30px;
+        color: #777;
     }
 }
