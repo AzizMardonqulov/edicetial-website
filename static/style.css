@@ -6,6 +6,7 @@
     text-decoration: none;
     transition: all 0.5s ease;
     font-family: Epilogue, sans-serif;
+    outline: none;
 }
 li{
     list-style: none;
@@ -1668,11 +1669,6 @@ p {
     font-size: 18px;
     font-weight: bold;
 }
-/* futer */
-.futer{
-    width: 100%;
-    height: 100vh;
-}
 .service-bottom{
     width:85%;
     background-color: #fff;
@@ -1800,5 +1796,174 @@ p {
     .service-bottom-lable-1{
         font-size: 30px;
         color: #777;
+    }
+}
+/* futer */
+.futer{
+    width: 100%;
+    padding-top: 16rem;
+    padding-bottom: 4rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    display: flex;
+    flex-direction: column;
+}
+.futer-block{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.futer-block-1{
+    display: flex;
+    justify-content: space-between;
+}
+.futer-block-2{
+    padding-top: 3REM;
+}
+.futer-block-1-blog-1{
+    width: 40%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.futer-block-1-blog-1-lable{
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 46PX;
+}
+.futer-block-1-blog-1-button{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 1rem;
+}
+.futer-block-1-blog-1-button a{
+    padding: 18px 30px;
+    background-color: #387975;
+    color: #fff;
+    border-radius: 10px;
+    border: 1 solid #387975;
+}
+.futer-block-1-blog-2{
+    width: 60%;
+}
+.futer-nav{
+    width: 100%;
+    display: flex;
+    margin-bottom: 5rem;
+    position: relative;
+}
+.futer-nav::before{
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -2rem;
+    background: #e0dede;
+}
+.futer-nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.futer-nav ul li a{
+    text-decoration: none;
+    color: #387975;
+    font-size: 20px;
+}
+.futer-block-1-blog-2-input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.futer-lable-1{
+    font-size: 25px;
+    color: #387975;
+    font-weight: 700;
+}
+.futer-1-input{
+    display: flex;
+    gap: 2rem;
+}
+.futer-1-input input{
+    width: 60%;
+    height: 60px;
+    border: 1px solid #777;
+    color: #333;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.futer-1-input a{
+    padding: 20px 35px;
+    background-color: #387975;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.futer-block-2-lable-1{
+    text-align: center;
+    font-size: 25px;
+    color: #000;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+.futer-block-2-lable-1 a{
+    color: #387975;
+}
+@media only screen and (max-width:1100px) {
+    .futer{
+        padding-top: 40%;
+    }
+}
+@media only screen and (max-width:1050px) {
+    .futer-block-1{
+        flex-direction: column;
+        gap: 6rem;
+    }
+    .futer-block-1-blog-1{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .futer-block-1-blog-1-lable{
+        text-align: center;
+    }
+    .futer-block-1-blog-1-lable br{
+        display: none;
+    }
+    .futer-block-1-blog-2{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width:800px) {
+    .futer{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media only screen and (max-width:720px) {
+    .futer{
+        padding-top: 30rem;
+    }
+    .futer-lable-1{
+        text-align: center;
+    }
+}
+@media only screen and (max-width:456px) {
+    .futer-block-1-blog-2 .futer-nav ul{
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    .futer-1-input{
+        flex-direction: column;
+    }
+    .futer-1-input input{
+        width: 100%;
     }
 }
