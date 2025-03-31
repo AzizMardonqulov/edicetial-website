@@ -943,8 +943,20 @@ input{
     gap: 5rem;
     padding-left: 5rem;
     padding-right: 5rem;
-    background-color: #295B58;
+    background: #295B58 ;
     padding-bottom: 3rem;
+    position: relative;
+}
+.trust-part-3::before{
+    content: "";
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+    bottom: -6%;
+    z-index: -1;
+    left: -0;
+    background-image: url(https://cdn.prod.website-files.com/64184874f371bc785f2236eb/641ac554e2a34f2c6a6284fb_Dark%20Background.png);
+    background-position: bottom;
 }
 .trust-part-3 *{
     font-family: "Poppins";
@@ -971,11 +983,20 @@ input{
     background-color:#387975;
     justify-content: center;
     padding-left: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
     padding-right: 2rem;
     border-radius: 10px;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
+}
+.trust-part-3-in-blog-1:nth-child(2){
+    margin-top: 2rem;
+}
+.trust-part-3-in-blog-1:nth-child(3){
+    margin-top: 0rem;
+}
+.trust-part-3-in-blog-1:nth-child(4){
+    margin-top: 2rem;
 }
 .trust-part-3-in-blog-1:first-child{
     background-color: #fff;
@@ -983,6 +1004,13 @@ input{
 .trust-part-3-in-blog-1:first-child .trust-part-3-in-blog-1-number{
     color: #fff;
     background: #387975;
+    box-shadow: 0px 0px 1em #295B58;
+}
+.trust-part-3-in-blog-1:first-child .trust-lable-1{
+    color: #222;
+}
+.trust-part-3-in-blog-1:first-child .trust-lable-2{
+    color: #222;
 }
 .trust-part-3-in-blog-1-number{
     width: 50px;
@@ -991,7 +1019,7 @@ input{
     font-weight: 700;
     background-color: #fff;
     color: #222;
-    box-shadow: 0px 0px 1em #295B58;
+    box-shadow: 0px 0px 1em #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1012,14 +1040,71 @@ input{
 }
 .trust-lable-1{
     font-size: 1.5rem;
-    color: #222;
+    color: #fff;
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
 .trust-lable-2{
     font-size: 1rem;
     font-family: 500;
-    color: #777;
+    color: #fff;
+    line-height: 1.4rem;
+}
+.trust-lable{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 2rem;
+}  
+.trust-in-lable-1{
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Epilogue, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.2em;
+}
+.trust-in-lable-2{
+    color:#fff;
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: Epilogue, sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.2em;  
+}
+.trust-in-lable-3{
+    width: 70%;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Epilogue, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5em; 
+    margin-bottom: 4rem; 
+}
+.trust-in-button a{
+    padding: 15px 40px;
+    font-size:16px;
+    color:#222;
+    margin-top: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 1px solid #fff;
+}
+.trust-in-button{
+    width: fit-content;
+    height: fit-content;
+}
+.trust-in-button:hover a{
+    background-color: transparent;
+    color: #fff;
 }
 @media only screen and (max-width:1480px) {
     .trust-part-3-in-blog-img{
@@ -1048,6 +1133,9 @@ input{
     .trust-part-3-in-blog-img::before{
         visibility: hidden;
     }
+    .trust-part-3-in-blog-1{
+        padding-bottom: 4rem;
+    }
     .trust-part-3-in-blog-img{
         width: 100%;
     }
@@ -1057,5 +1145,29 @@ input{
     }
     .trust-part-3-lable-1{
         font-size: 1.5rem;
+    }
+    .trust-in-lable-1{
+        text-align: center;
+    }
+    .trust-lable{
+        width: 100%;
+        text-align: center;
+        display: flex;
+    }
+    .trust-in-lable-2{
+        text-align: center;
+    }
+    .trust-in-lable-3{
+        width: fit-content;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .trust-in-button{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .trust-part-3::before{
+        display: none;
     }
 }

@@ -70,13 +70,31 @@ def eilts():
     conn.close()  # Ulanishni yopamiz
     return render_template("eilts.html", quasion=quasion)
 
-@app.route("/test/result/page")
+@app.route("/test/result/page", methods=["POST" , "GET"])
 def get_result():
-    if request.method == "POST":
-        data = request.get_json()
-        score = data.get("score", 0)
-        return jsonify({"message": "Score received", "score": score})
-    return render_template("result.html")
+    result = request.form["result" , 40]
+    resultNum =int(result)
+    resultNum = resultNum * 7;
+    text =""
+    if resultNum >= 30 and resultNum < 40 :
+        text = "You are a beginner. You need to practice more."
+    elif resultNum >= 40 and resultNum < 50:
+        text = "A1"
+    elif resultNum >= 50 and resultNum < 60:
+        text = "A2"
+    elif resultNum >= 60 and resultNum < 70:
+        text = "B1"
+    elif resultNum >= 70 and resultNum < 80:
+        text = "B2"
+    
+    elif resultNum >= 80 and resultNum < 90:
+        text = "C1"
+    elif resultNum >= 90 and resultNum < 100:
+        text = "C2"
+    
+
+        
+    return render_template("result.html" , result = result , test = test)
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000)) 
     app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)
