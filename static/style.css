@@ -1170,4 +1170,198 @@ input{
     .trust-part-3::before{
         display: none;
     }
+    .trust-part-3-in-blog-1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .trust-part-3-in-blog-1-lable{
+        text-align: center;
+    }
+}
+/* course */
+.course{
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-top: 6rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    background: linear-gradient( to left bottom , #fff , #e2edec);
+}
+.coyurse-part-1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-lable-1{
+    color: #222;
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Epilogue, sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.2em;
+}
+.course-lable-2{
+    color: #3d3c3c;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Epilogue, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+.course-button{
+    display: flex;
+    align-items: center;
+}
+.course-button a{
+    padding: 18px 30px;
+    background-color: transparent;
+    border: 2px solid #295B58;
+    color: #295B58;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.course-button:hover a{
+    background-color: #295B58;
+    color: #fff;
+    box-shadow: 0px 0px 1em #77777765;
+}
+.course-in{
+    padding-top: 4rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.course-block-1{
+    width: 30%;
+    gap: 2rem;
+    flex-direction: column;
+    display: flex;
+    margin-bottom: 3rem;
+}
+.course-block-1-img{
+    width: 100%;
+    position: relative;
+}
+.course-block-1-img img{
+    width: 100%;
+    height: fit-content;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+.course-block-1-img div{
+    padding: 8px 20px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: 800;
+    background-color: #fff;
+    color: #295B58;
+    border-radius: 20px;
+    border: 1px solid #fff;
+
+}
+.course-block-1-img:hover img{
+    border: 2px solid #295B58;
+}
+.course-block-1-img:hover div{
+    background-color: #295B58;
+    color: #fff;
+}
+.course-block-lable{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.course-block-lable-1{
+    letter-spacing: .2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Epilogue, sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.2em; 
+    color: #222;
+}
+.course-block-lable-2{
+    color: #777;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-family: Epilogue, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+.course-block-button a{
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+    color: #387975; 
+}
+
+@media only screen and (max-width:1240px) {
+    .course-block-1{
+        width: 45%;
+    }
+    .course-lable{
+        padding-right: 2rem;
+    }
+    .course-lable-2 br{
+        display: none;
+    }
+    .course-button{
+        width: 40%;
+    }
+}
+@media only screen and (max-width:1021px) {
+    .coyurse-part-1{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    .course-lable{
+        text-align: center;
+    }
+    .course-button{
+        width: 100%;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width:900px) {
+    .course-block-1{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:800px) {
+    .course{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media only screen and (max-width:576px) {
+    .course{
+        margin-top: 2rem;
+    }
+}
+.swiper {
+    width: 80%;
+    max-width: 600px;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    background: #007bff;
+    color: white;
+    height: 300px;
+    border-radius: 10px;
 }
