@@ -360,7 +360,7 @@ input{
 }
 @keyframes banerImg2-2 {
     from{
-        transform: translateY(-50px);
+        transform: translateY(-120px);
     }
     to{
         transform: translateY(0);
@@ -1994,7 +1994,7 @@ p {
     position: absolute;
     left: 0;
     bottom: -2rem;
-    background: #e0dede;
+
 }
 .futer-nav ul {
     width: 100%;

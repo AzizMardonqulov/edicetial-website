@@ -1,11 +1,11 @@
-from flask import Flask , render_template , redirect ,jsonify , request
+from flask import Flask , render_template , redirect ,jsonify , request , session , flash 
 import os
 import sqlite3
 app = Flask(__name__)
-
+app.secret_key = "this_is_secret_key"
 def get_db_connection():
     conn = sqlite3.connect("test.db")
-    conn.row_factory = sqlite3.Row  # Ma'lumotlarni lug‘at (dictionary) shaklida olish
+    conn.row_factory = sqlite3.Row  
     return conn
 conn = sqlite3.connect("test.db")
 
@@ -40,19 +40,78 @@ sample_data = [
     ("Choose the correct usage of a subjunctive mood:", "A. I wish he were here , B. I wish he was here , C. I wish he is here , D. I wish he be here.", "A. I wish he were here"),
     ("Identify the sentence with correct parallel structure:", "A. She enjoys reading, cooking, and to dance , B. She enjoys reading, cooking, and dancing , C. She enjoys reading, to cook, and dancing , D. She enjoys to read, cooking, and dancing.", "B. She enjoys reading, cooking, and dancing"),
     ("What does (walk on eggshells) mean?", "A. To be extremely careful , B. To be very clumsy , C. To be very confident , D. To be extremely happy.", "A. To be extremely careful"),
+    ("What is the capital of France?", "A. London , B. Paris , C. Rome , D. Madrid", "B. Paris"),
 ]
-# cursor.executemany("INSERT INTO test (quasion, obsion, addvers) VALUES (?, ?, ?)", sample_data)
+#cursor.executemany("INSERT INTO test (quasion, obsion, addvers) VALUES (?, ?, ?)", sample_data)
 
 @app.route('/')
 def index():
-  return  render_template("index.html")
+    userr = session.get("user_id", "Log In")
+    if "user_id" in session:
+        return render_template("index.html", log=userr)
+    return redirect("/login")
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if "user_id" in session:
+        flash("Siz allaqachon logindan o'tgansiz")
+        return redirect("/")
+    if request.method == "GET":
+        return render_template("login.html")
+
+    foydalanuvchilar = request.form.get("email")
+    password = request.form.get("password")
+
+    con = get_db_connection()
+    cursor = con.cursor()
+    cursor.execute(
+        "SELECT * FROM foydalanuvchilar WHERE foydalanuvchi_nomi = ? AND parol = ?",
+        (foydalanuvchilar, password),
+    )
+    row = cursor.fetchone()
+    con.close()
+
+    if row:
+        session["user_id"] = foydalanuvchilar
+        return redirect("/")
+    else:
+        flash("No'to'gri foydalanuvchi nomi yoki parol")
+        return render_template("unfound.html")
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "GET":
+        return render_template("register.html")
+
+    foydalanuvchi_nomi = request.form.get("email")
+    parol = request.form.get("password")
+
+    con = get_db_connection()
+    cursor = con.cursor()
+    cursor.execute(
+        "INSERT INTO foydalanuvchilar (foydalanuvchi_nomi, parol) VALUES (?, ?)",
+        (foydalanuvchi_nomi, parol),
+    )
+    con.commit()
+    con.close()
+
+    return redirect("/")
+
+
+@app.route("/log-out")
+def logout():
+    session.pop("user_id", None)
+    flash("Siz tizimdan chiqdingiz")
+    return redirect("/")
+
 
 
 @app.route("/test")
 def test():
    return render_template("test.html" )
 
-@app.route("/test/eilts")
+@app.route("/test/eilts", methods=["GET", "POST"])
 def eilts():
     conn = get_db_connection() 
     cursor = conn.cursor()
@@ -70,31 +129,16 @@ def eilts():
     conn.close()  # Ulanishni yopamiz
     return render_template("eilts.html", quasion=quasion)
 
-@app.route("/test/result/page", methods=["POST" , "GET"])
+@app.route("/test/result/page" , methods=["GET", "POST"])
 def get_result():
-    result = request.form["result" , 40]
-    resultNum =int(result)
-    resultNum = resultNum * 7;
-    text =""
-    if resultNum >= 30 and resultNum < 40 :
-        text = "You are a beginner. You need to practice more."
-    elif resultNum >= 40 and resultNum < 50:
-        text = "A1"
-    elif resultNum >= 50 and resultNum < 60:
-        text = "A2"
-    elif resultNum >= 60 and resultNum < 70:
-        text = "B1"
-    elif resultNum >= 70 and resultNum < 80:
-        text = "B2"
-    
-    elif resultNum >= 80 and resultNum < 90:
-        text = "C1"
-    elif resultNum >= 90 and resultNum < 100:
-        text = "C2"
-    
+    scrore = request.form.get("Result")
+    if scrore is None:
+        return "Error: No result provided", 400  
+    resultNum = int(scrore) * 7
 
-        
-    return render_template("result.html" , result = result , test = test)
+    text =""
+    return render_template("result.html" , result = scrore , test = test)
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000)) 
     app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)

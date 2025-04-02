@@ -209,14 +209,6 @@ input{
 .open-test:active{
     transform: scale(1.3);
 }
-.quasion-button-2{
-    padding: 20px 100px;
-    background-color: #295B58;
-    color: #fff !important;
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
-}
 @media only screen and (max-width:768px) {
     .test{
         padding-left: 1rem;
@@ -342,8 +334,16 @@ input{
     justify-content: space-between;
 }
 .quasion-buttons div{
-    width: 45%;
-    padding: 20px 40px;
+    padding: 20px 20%;
+    text-align: center;
+    font-size: 18px;
+    background-color: #295B58;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.quasion-buttons a{
+    padding: 20px 20%;
     text-align: center;
     font-size: 18px;
     background-color: #295B58;
@@ -360,9 +360,6 @@ input{
     background-color: red;
     margin-top: 3rem;
     margin-bottom: 3rem;
-}
-.active{
-    display: flex !important;
 }
 .clickButton{
     width: fit-content;
@@ -385,4 +382,49 @@ input{
     .quasion-block{
         transform: scale(0.6);
     }
+}
+.result{
+    width: 100%;
+    height: 100vh;
+    position:fixed;
+    top: -100vh;
+    left: 0;
+    z-index: 100;
+    background-color: #000000cf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.result-block{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background: #295B58;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+h1{
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 40px;
+}
+h4{
+    color: #abc2c0;
+    font-size: 20px;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 0.5rem;
+}
+h4:last-child{
+    font-size: 20px;
+}
+.result-block a{
+    color: #fff;
+    font-size: 20px;
+}
+.active{
+    display: flex !important;
 }
